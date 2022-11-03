@@ -4,18 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Overflow Css</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
-  <main>
-    <div class="div1">Header</div>
-    <div class="div2">Box1</div>
-    <div class="div3">Box2</div>
-    <div class="div4">Box3</div>
-    <div class="div5">Sidebar</div>
-    <div class="div6">Main Content</div>
-    <div class="div7">Footer</div>
-  </main>
+  <h1>Scren Size: <span id="span"></span>px</h1>
+  <div>
+    <h1>Small Mobile Device</h1>
+    <h1>Mobile Device</h1>
+    <h1>Tablet Device</h1>
+    <h1>Laptop Devices</h1>
+    <h1>X-Large Device</h1>
+  </div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg" alt="">
+
+
+  <script>
+    window.addEventListener("resize",function(){
+      let screenSize=window.innerWidth;
+      document.querySelector("#span").innerHTML=screenSize
+    })
+  </script>
 </body>
 </html>
