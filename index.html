@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overflow Css</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
 
-  <link rel="stylesheet" href="style.css">
- 
 </head>
 <body>
-  <h1>Scren Size: <span id="span"></span>px</h1>
-  <div>
-    <h1>Small Mobile Device</h1>
-    <h1>Mobile Device</h1>
-    <h1>Tablet Device</h1>
-    <h1>Laptop Devices</h1>
-    <h1>X-Large Device</h1>
-  </div>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg" alt="">
-
-
-  <script>
-    window.addEventListener("resize",function(){
-      let screenSize=window.innerWidth;
-      document.querySelector("#span").innerHTML=screenSize
-    })
-  </script>
+    <main>
+        <section class="container-fluid">
+            <!-- title  -->
+            <div class="title">
+                <h1>User Review Page</h1>
+                <div class="underline"></div>
+            </div>
+    
+            <article class="review">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1610088441520-4352457e7095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1lbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt="men1" id="person-img" width="200px" height="200px">
+                </div>
+                <h4 id="author">John Doe</h4>
+                <p id="job">Senior Developer</p>
+                <p id="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, cumque quia dolor veniam quaerat, voluptates illum omnis laudantium enim ipsum dolores! Perspiciatis nam similique necessitatibus consequatur ea nihil, reiciendis dolorem.
+                Minus ex corporis, incidunt perspiciatis magni inventore, soluta repellat quod laboriosam quisquam illo! Ipsa eligendi incidunt id et ex repellendus? Iusto unde eius incidunt nobis laboriosam corrupti sint quae tempora.
+                Voluptatibus dolorum optio at illo quae quisquam ab libero eaque veniam accusamus inventore atque quidem aperiam, cupiditate molestiae velit, illum rerum, perferendis fugit praesentium culpa voluptates minus modi! Veritatis, hic.
+                Itaque veritatis sint, quo accusamus reiciendis debitis. Iusto repellendus dicta illum! Quos, accusantium ratione. Ea numquam eveniet aspernatur corporis? Reiciendis ad officiis doloribus eveniet! Rem amet commodi neque assumenda ad.
+                Enim culpa incidunt, quas quidem amet adipisci omnis! Nostrum tenetur quae quis iure voluptas alias omnis aspernatur. Temporibus, deleniti. Officiis laudantium suscipit explicabo dolore ipsam veniam quis aliquid perspiciatis unde.</p>
+            </article>
+    
+    
+            <!-- lets create a button previous and next button  -->
+            <div class="button-container">
+                <button class="prev-btn btn btn-primary">
+                    <i class="bi bi-chevron-double-left"></i>
+    
+                </button>
+    
+                <button class="next-btn btn btn-primary">
+                    <i class="bi bi-chevron-double-right"></i>
+    
+                </button>
+                <!-- random user button -->
+                <button class="random-btn btn btn-success">Random User</button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
