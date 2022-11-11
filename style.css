@@ -1,35 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Grand+Hotel&family=Poppins:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    background: rgb(252, 252, 133);
+    background-color: rgb(211, 215, 215);
+    color: rgb(35, 35, 55);
+    font-family: 'Poppins', sans-serif;
+    padding: 50px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-main{
-    margin-left: 400px
+.burger{
+    max-width: 980px;
+    border-radius: 40px;
+    display: flex;
+    align-items: stretch;
 }
 
-#person-img{
-    border: 2px solid rgb(0, 85, 255);
-    border-radius: 50%;
-    height: auto;
-    width: auto;
+.burger_image{
+    width: 100%;
     display: block;
 }
 
-h1{
-    color:rgb(42, 63, 203);
-    font-weight: bolder;
+
+.burger-content{
+    flex: 1;
+    background: rgb(255, 253, 253);
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.burger_price{
+    display: flex;
+    flex:2;
+    background: linear-gradient(rgb(255, 170, 0),rgb(255, 0, 204));
     font-size: 40px;
-    text-align: center;
-}
-
-#author,#job{
-    color: rgb(249, 48, 88);
     font-weight: bolder;
-    font-family: cursive;
+    align-items: center;
+    justify-content: center;
+    
 }
 
-#info{
-    background-color: rgb(131, 131, 252);
-    border: 2px solid black;
-    width:500px;
-    border-radius: 20px;
+.burger_title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.burger_heading{
+    font-size: 20px;
+    margin-right: auto;
+}
+
+.burger_type{
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 30px;
+    margin-left:10px;
+}
+
+.brg-veg{
+    background-color: rgb(128, 213, 1);
+}
+
+.brg-non-veg{
+    background-color: red;
+}
+
+.burger_description{
+    font-size: 50px;
+    color:rgb(160, 195, 21);
+    font-weight: bold
+}
+
+.burger_details{
+    display: flex;
+    margin-top:auto;
+   
+}
+
+.burger_detail{
+    display: flex;
+    margin-top:20px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.emoji{
+margin-right: 4px;
 }
