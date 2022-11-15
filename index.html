@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger King Poster</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
-    <figure class="burger">
-        <!-- //created a section for Burger Image  -->
-        <div class="burger_image">
-            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="burger" class="burger_img">
-        </div>
+  <section>
+    <button class="btn btn-primary" id="all-coin-btn">All Coin</button>
+    <br><br>
+    <!-- create a layout for table to display the data in table format -->
+    <table class="table table-dark table bordered">
+        <thead>
+            <th>ID</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Market Cap</th>
+            <th>Price</th>
+        </thead>
+  
+        <!-- create a table body to insert the data  -->
+        <tbody id="table-body"></tbody>
+    </table>
+  </section>
+  
 
-        <!-- //create a division for Burger content  -->
-        <div class="burger-content">
-            <div class="burger_title">
-                <h1 class="burger_heading">BURGER KING 😍 👌👌</h1>
-                <div class="burger_type brg-veg">#Vegitarian</div>
-                <div class="burger_type brg-non-veg">#Non-Vegitarian</div>
-            </div>
-            <p class="burger_description">Hungry? We got you.</p>
-            <div class="burger_details">
-                <p class="burger_detail"><span class="emoji">🍔</span>295 kcal</p>
-                <p class="burger_detail"><span class="emoji">🕐</span>30min</p>
-                <p class="burger_detail"><span class="emoji">⭐</span>4.8/5</p>
-            </div>
-        </div>
-
-        <!-- create a section for price   -->
-        <div class="burger_price">Rs.120.00</div>
-    </figure>
+  <script src="script.js"></script>
 </body>
 </html>
