@@ -1,102 +1,38 @@
-let url="https://6375bd447e93bcb006b86a05.mockapi.io/users";
-
-
-//write a logic to get the data 
-async function getUsers(){
-    let users;
-    try {
-        //Fetch the data 
-        const data=await fetch(url,{
-            method:"GET",
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-        users=await data.json();
-        // console.log(users)
-    } catch (error) {
-        console.log(error)
+function clr() {
+    document.querySelector("#result").value = "";
+  }
+  
+  function myFun(event) {
+    if (
+      event.key === "1" ||
+      event.key === "2" ||
+      event.key === "3" ||
+      event.key === "4" ||
+      event.key === "5" ||
+      event.key === "6" ||
+      event.key === "7" ||
+      event.key === "8" ||
+      event.key === "9" ||
+      event.key === "0" ||
+      event.key === "+" ||
+      event.key === "-" ||
+      event.key === "*" ||
+      event.key === "/" ||
+      event.key === "%"
+    ) {
+      document.querySelector("#result").value += event.key;
+      return;
+    } else {
+      alert("Only numbers are allowed!");
     }
-
-    return users
-}
-
-// getUsers()
-
-
-//Write a function to display the data in DOM 
-async function displayUsers(){
-    let users=await getUsers();
-    // console.log(users)
-    //select the target element user-list
-    const userList=document.querySelector(".user-list")
-    userList.innerHTML="";
-
-    users.forEach((user)=>{
-        // console.log(user.name)
-        // console.log(user.avatar)
-        userList.innerHTML+=`
-        <div class="user-container">
-        <img class="user-avatar" src="${user.avatar}" alt="${user.name}">
-        <h4>${user.name}</h4>
-        <button class="btn btn-primary" onClick="deleteUser(${user.id})">Delete</button>
-        <button class="btn btn-primary" onClick="editUser(${user.id})">Edit</button>
-        </div>
-        `
-    })
-
-}
-
-displayUsers()
-
-
-async function addUser(){
-    //target element 
-    const userName=document.querySelector(".add-user-name").value;
-    const userAvatar=document.querySelector(".add-user-avatar").value;
-
-    // console.log(userName,userAvatar)
-
-    const data=await fetch(url,{
-        method:"POST",
-        body:JSON.stringify({
-            name:userName,
-            avatar:userAvatar
-        }),
-        headers:{
-            "Content-Type": "application/json",
-        }
-    })
-
-    displayUsers()
-     userName=document.querySelector(".add-user-name").value="";
-     userAvatar=document.querySelector(".add-user-avatar").value="";
-
-}
-
-
-//Write a Logic to delete user data when clicked on Delete button
-async function deleteUser(id){
-    try {
-        const data=await fetch(`${url}/${id}`,{
-            method:"Delete",
-            headers:{
-                "Content-Type": "application/json",
-            }
-        })
-        const users=await data.json();
-        console.log(users);
-        displayUsers()
-    } catch (error) {
-       console.log(error) 
-    }
-}
-
-
-async function editUser(id){
-    try {
-        
-    } catch (error) {
-        
-    }
-}
+  }
+  
+  function displayNumb(num) {
+    document.querySelector("#result").value += num;
+  }
+  
+  function solve() {
+    let res = document.querySelector("#result").value;
+    let y = eval(res);
+    document.querySelector("#result").value = y;
+  }
