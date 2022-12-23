@@ -5,48 +5,82 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
 </head>
 <body>
   <!-- The root element of the vue.js  app  -->
   <div id="app">
-    <h1>Result:{{result}}</h1>
-    First:<input type="text" v-model="firstNumber" placeholder="Enter First value"/><br> <br>
-    Second:<input type="text" v-model="secondNumber" placeholder="Enter Second value"  /><br>
-    <button v-on:click="add">+</button>
-    <button v-on:click="subtract">-</button>
-    <button v-on:click="multiply">*</button>
-    <button v-on:click="divide">/</button>
+    <form @submit.prevent="addUser">
+      <label for="name">Name:</label>
+      <input type="text" v-model="newUser.name" id="name"/>
+     <br>
+     <label for="email">Email:</label>
+     <input type="email"  v-model="newUser.email" id="email"/>
+     <br>
+     <label for="city">City:</label>
+     <input type="text"  v-model="newUser.city" id="city"/>
+     <br>
+     <button type="submit">Add user</button>
+    </form>
+  <table border="2">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr v-for="user in users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.city}}</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 
-<script>
-//create a new vue instance 
-const app=new Vue({
-  el:"#app",
-  data:{
-    firstNumber:20,
-    secondNumber:10,
-    result:0
-  },
-  methods:{
-    add(){
-      this.result=parseInt(this.firstNumber)+parseInt(this.secondNumber)
-    },
-    subtract(){
-    this.result=parseInt(this.firstNumber)-parseInt(this.secondNumber);
-    },
-    multiply(){
-      this.result=parseInt(this.firstNumber)*parseInt(this.secondNumber)
-    },
 
-    divide(){
-      this.result=parseInt(this.firstNumber)/parseInt(this.secondNumber);
-    }
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        users:[
+          {id:1,name:"John",email:"john@gmail.com",city:"Mumbai"},
+          {id:2,name:"jenny",email:"jenny@gmail.com",city:"Delhi"},
+          {id:3,name:"Sohan",email:"sohan@gmail.com",city:"Bengaluru"},
+          {id:4,name:"Mohan",email:"mohan@gmail.com",city:"Chennai"},
+          {id:5,name:"Joe",email:"Joe@gmail.com",city:"Pune"},
+        ],
+        newUser:{
+          name:"",
+          email:"",
+          city:"",
+        }
+      },
+      methods:{
+        addUser(){
+          //Generate a new ID for the user 
+          this.newUser.id=Math.max(...this.users.map(user=>user.id))+1
 
-  }
-})
+          //Add a new user to user array 
+          this.users.push(this.newUser);
 
-</script>
-
+          //Reset the user form 
+          this.newUser={
+            name:"",
+            email:"",
+            city:"",
+          }
+        }
+      }
+    })
+  </script>
+   
+    
 </body>
 </html>
